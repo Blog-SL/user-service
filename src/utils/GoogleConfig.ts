@@ -9,6 +9,6 @@ const GOOGLE_CLIENT_SECRET = process.env.Google_client_secret;
 export const oauth2client = new google.auth.OAuth2(
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  "https://blogsl.dev/user/api/v1/auth/google/callback"
+  "https://blogsl.dev/user/api/v1/login"
   // "postmessage"
 );
