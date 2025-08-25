@@ -1,16 +1,18 @@
-import express from "express";
+import { Router } from "express";
 import {
-  getUserProfile,
+  registerUser,
   loginUser,
   myProfile,
+  getUserProfile,
   updateProfilePic,
   updateUser,
 } from "../controllers/user.js";
 import { isAuth } from "../middleware/isAuth.js";
 import uploadFile from "../middleware/multer.js";
 
-const router = express.Router();
+const router = Router();
 
+router.post("/register", registerUser);
 router.post("/login", loginUser);
 router.get("/me", isAuth, myProfile);
 router.get("/user/:id", getUserProfile);
