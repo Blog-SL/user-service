@@ -8,6 +8,7 @@ export interface IUser extends Document {
   facebook: string;
   linkedin: string;
   bio: string;
+  password: string; // Added password field for JWT auth
 }
 
 const schema: Schema<IUser> = new Schema(
@@ -21,9 +22,14 @@ const schema: Schema<IUser> = new Schema(
       required: true,
       unique: true,
     },
-    image: {
+    password: {
       type: String,
       required: true,
+    }, // Added password field for JWT auth
+    image: {
+      type: String,
+      required: false, // Made optional for registration
+      default: "", // Default empty string
     },
     instagram: String,
     facebook: String,
